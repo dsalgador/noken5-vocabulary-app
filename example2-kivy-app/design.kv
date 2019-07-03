@@ -1,0 +1,43 @@
+<MyWidget>:
+    size: root.size
+    orientation: 'vertical'
+    padding: 20
+    spacing: 0
+
+    #label1 muestra la pregunta
+    Label:
+        id: label1
+        color: 1,0,1,1
+        canvas.before:
+            Color:
+                rgba: 191/255.0, 144/255.0, 63/255.0, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+    #label2 muestra la respuesta
+    Label:
+        id: label2
+        color: 1,0,1,1
+        canvas.before:
+            Color:
+                rgba:  110/255.0, 191/255.0, 63/255.0, 1
+            Rectangle:
+                pos:self.pos
+                size: self.size
+
+    BoxLayout:
+        padding: 0,10,0,0
+        spacing: 10
+        size_hint:1, 0.25
+        orientation: 'horizontal'
+        Button:
+            id: button1
+            text: "Mostrar pregunta"
+            on_release: root.showquestion()
+
+        Button:
+            id: button2
+            text: "Mostrar respuesta"
+            on_release: root.showanswer()
+
