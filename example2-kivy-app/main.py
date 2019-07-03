@@ -10,7 +10,7 @@ Builder.load_file('design.kv')
 class MyWidget(BoxLayout):
     def __init__(self):
         super(MyWidget, self).__init__()
-        self.vocab = pd.read_csv("database/vocabularydb.csv")
+        self.vocab = pd.read_csv("database/vocabularydb.csv", encoding='utf-8')
         print(self.vocab.head())
         self.current_index = None
 
@@ -22,7 +22,7 @@ class MyWidget(BoxLayout):
         self.ids['label1'].text = filetext
 
     def showanswer(self):
-        filetext = self.vocab.romanji[self.current_index]
+        filetext = self.vocab.kanji[self.current_index]
         self.ids['label2'].text = filetext
 
 
