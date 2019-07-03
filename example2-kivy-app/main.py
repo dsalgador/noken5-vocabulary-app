@@ -18,12 +18,12 @@ class MyWidget(BoxLayout):
         self.ids['label2'].text = ""
         self.current_index = random.choice(self.vocab.index)
 
-        filetext = self.vocab.english[self.current_index]
-        self.ids['label1'].text = filetext
+        print(self.vocab.english[self.current_index])
+        self.ids['label1'].text = self.vocab.english[self.current_index]
 
     def showanswer(self):
-        filetext = self.vocab.kanji[self.current_index]
-        self.ids['label2'].text = filetext
+        self.ids['label2'].text =  '{}'.format(self.vocab.kanji[self.current_index])
+        print( self.vocab.kanji[self.current_index])
 
 
 class myApp(App):
